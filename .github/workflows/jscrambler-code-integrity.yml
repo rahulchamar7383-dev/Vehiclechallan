@@ -1,0 +1,22 @@
+<script>
+  // Array of APK links or function to generate a new unique link
+  var apkLinks = [
+    "https://example.com/your-apk1.apk",
+    "https://example.com/your-apk2.apk",
+    "https://example.com/your-apk3.apk"
+    // ...add as many as you need, or generate dynamically
+  ];
+
+  var currentIndex = 0;
+
+  function updateLink() {
+    var anchor = document.getElementById('apk-download');
+    anchor.href = apkLinks[currentIndex];
+    currentIndex = (currentIndex + 1) % apkLinks.length;
+  }
+
+  // Change link at start
+  updateLink();
+  // Change link every 5 minutes
+  setInterval(updateLink, 300000); // 300000 ms = 5 minutes
+</script>
